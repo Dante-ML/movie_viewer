@@ -1,0 +1,13 @@
+ABSTRACCIÓN
+
+Entidad: Entes que van a ser iguales en diferentes aplicaciones de nuestra empresa. No tiene que ver del todo con BD
+    - Cliente
+    - Productos
+    - Peliculas
+
+Datasource: Abstracción del datasource, reglas de negocio que deben de seguir las implementaciones
+
+Repositorio: Abstracción del repocitorio, son reglas en caso de que hayan varios tipos de repositorios
+
+Esto no es la implementación unicamente nos dice que se necesita para ser considerado un datasource, etc.
+Abtracción 

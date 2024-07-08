@@ -1,0 +1,9 @@
+IMPLEMENTACIÓN
+
+Datasource: Implementación del Datasource, es el codigo que llamara a la API
+
+Mappers: Transforma la información recibida a mi entidad propio. Unicamente deberiamos de cambiar el mapper si el API cambia
+
+Models: Una forma de tipar la información recibidad para trabajar de una manera mas sencilla con el mapper
+
+Repositorio: Clase que se encarga de recibir un datasource o varios, envuelve a los datasources es inmutable por parte del datasource
