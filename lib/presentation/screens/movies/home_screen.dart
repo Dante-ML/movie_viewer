@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_viewer/presentation/providers/movies/movies_providers.dart';
+import 'package:movie_viewer/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   static const name = 'home-screen';
@@ -38,6 +39,9 @@ class _HomeViewState extends ConsumerState<_HomeView> {
 
     return Column(
       children: [
+        
+        const CustomAppbar(),
+
         Expanded(
           child: ListView.builder(
             itemCount: nowPlayingMovies.length,
