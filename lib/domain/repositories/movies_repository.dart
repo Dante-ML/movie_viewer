@@ -3,7 +3,7 @@
 
 import '../entities/movies.dart';
 
-abstract class MoviesRepositories {
+abstract class MoviesRepository {
   
   
   Future <List<Movie>> getNowPlaying({int page = 1 });
