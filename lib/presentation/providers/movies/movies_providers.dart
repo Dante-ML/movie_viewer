@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_viewer/domain/entities/movies.dart';
-import 'package:movie_viewer/presentation/providers/movies/movies_repository_provider.dart';
+
+import '../providers.dart';
+
 
 //El notifier es MoviesNotifier y la data que maneja es un listado de Movie
 final nomPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
