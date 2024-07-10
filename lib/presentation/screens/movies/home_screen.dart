@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_viewer/presentation/providers/movies/movies_providers.dart';
+import 'package:movie_viewer/presentation/providers/providers.dart';
 import 'package:movie_viewer/presentation/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: _HomeView(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
@@ -35,7 +36,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
   @override
   Widget build(BuildContext context) {
 
-    final nowPlayingMovies = ref.watch(nomPlayingMoviesProvider);
+    final nowPlayingMovies = ref.watch(moviesSlideShowProvider);
 
     return Column(
       children: [
