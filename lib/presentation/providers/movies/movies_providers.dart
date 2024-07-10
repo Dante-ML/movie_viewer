@@ -5,7 +5,7 @@ import '../providers.dart';
 
 
 //El notifier es MoviesNotifier y la data que maneja es un listado de Movie
-final nomPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+final nowPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
 
   final fetchMoreMovies = ref.watch(moviesRepositoryProvider).getNowPlaying;
 
