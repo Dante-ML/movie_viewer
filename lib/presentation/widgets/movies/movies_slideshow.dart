@@ -1,7 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:movie_viewer/domain/entities/movies.dart';
 
 class MoviesSlideshow extends StatelessWidget {
@@ -11,16 +10,28 @@ class MoviesSlideshow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
     return Padding(
       padding: const EdgeInsets.all(10),
       child: SizedBox(
-        height: 300,
+        height: 210,
         width: double.infinity,
         child: Swiper(
           itemCount: movies.length,
           autoplay: true,
           viewportFraction: 0.8,
           scale: 0.9,
+          pagination: SwiperPagination(
+            margin: const EdgeInsets.only(top: 0),
+            alignment: Alignment.bottomCenter,
+            builder: DotSwiperPaginationBuilder(
+              size: 10,
+              activeColor: colors.primary,
+              color: colors.secondary,
+            )
+          ),
           itemBuilder: (context, index) {
             return _Slide(
               movie: movies[index],
@@ -32,7 +43,10 @@ class MoviesSlideshow extends StatelessWidget {
   }
 }
 
+
+
 class _Slide extends StatelessWidget {
+
   final Movie movie;
 
   const _Slide({required this.movie});
@@ -68,7 +82,7 @@ class _Slide extends StatelessWidget {
                   )
                 );
               }
-              return child;
+              return FadeIn(child: child);
             },
           )
         )
